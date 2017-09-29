@@ -11,6 +11,6 @@ function login () {
         if [ -f "$COOKIE_FILE" ]; then
             rm "$COOKIE_FILE"
         fi
-        curl -k -c "$COOKIE_FILE" "$NAS_ENTRY/webapi/auth.cgi?api=SYNO.API.Auth&version=2&method=login&account=$USERNAME&passwd=$PASSWORD&session=DownloadStation" | tee -a "$LOG_FILE"
+        curl -k -c "$COOKIE_FILE" "$NAS_ENTRY/webapi/auth.cgi?api=SYNO.API.Auth&version=2&method=login&account=$USERNAME&passwd=$PASSWORD&session=DownloadStation" 2>/dev/null | tee -a "$LOG_FILE"
     fi 
 }
